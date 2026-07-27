@@ -15,7 +15,8 @@ export function ClientStep({
   onBack: () => void;
 }) {
   const [clientName, setClientName] = useState(name || "");
-  const [phone, setPhone] = useState(whatsapp || "");
+  // Dejamos el prefijo +569 listo para que el cliente solo escriba su número.
+  const [phone, setPhone] = useState(whatsapp || "+569 ");
   const [error, setError] = useState<string | null>(null);
 
   const handleContinue = () => {
