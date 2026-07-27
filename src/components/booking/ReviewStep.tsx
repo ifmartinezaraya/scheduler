@@ -27,21 +27,21 @@ export function ReviewStep({
 
   return (
     <div>
-      <h2 className="text-xl font-bold mb-1">Revisa tu reserva</h2>
-      <p className="text-gray-500 mb-6 text-sm">Confirma que todo esté correcto.</p>
+      <h2 className="text-2xl font-bold uppercase tracking-tight mb-1">Revisa tu reserva</h2>
+      <p className="text-coffee-400 mb-8 text-sm">Confirma que todo esté correcto.</p>
 
-      <div className="rounded-2xl border-2 border-gray-100 divide-y divide-gray-100 mb-8">
+      <div className="divide-y divide-coffee-200/70 border-y border-coffee-200/70 mb-10">
         {rows.map(([label, value]) => (
-          <div key={label} className="flex justify-between px-4 py-3">
-            <span className="text-gray-500 text-sm">{label}</span>
-            <span className="font-semibold text-right">{value}</span>
+          <div key={label} className="flex justify-between items-center py-3.5">
+            <span className="eyebrow text-coffee-400">{label}</span>
+            <span className="font-semibold text-right text-coffee-ink">{value}</span>
           </div>
         ))}
       </div>
 
       <div className="flex justify-between">
         <Button variant="ghost" onClick={onBack} disabled={isSubmitting}>
-          ← Atrás
+          Atrás
         </Button>
         <Button onClick={onConfirm} isLoading={isSubmitting}>
           Confirmar reserva

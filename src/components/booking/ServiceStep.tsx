@@ -12,27 +12,26 @@ export function ServiceStep({
 }) {
   return (
     <div>
-      <h2 className="text-xl font-bold mb-1">Elige un servicio</h2>
-      <p className="text-gray-500 mb-6 text-sm">Selecciona el servicio que deseas reservar.</p>
-      <div className="grid gap-3">
-        {SERVICES.map((s) => (
+      <h2 className="text-2xl font-bold uppercase tracking-tight mb-1">Elige un servicio</h2>
+      <p className="text-coffee-400 mb-8 text-sm">Selecciona lo que quieres reservar.</p>
+      <div className="divide-y divide-coffee-200/70 border-y border-coffee-200/70">
+        {SERVICES.map((s, i) => (
           <button
             key={s.id}
             onClick={() => onSelect(s)}
-            className={`flex items-center gap-4 text-left p-4 rounded-2xl border-2 transition-all ${
-              selectedId === s.id
-                ? "border-brand bg-brand/5"
-                : "border-gray-200 hover:border-brand/50 bg-white"
+            className={`group w-full flex items-center gap-5 text-left py-5 transition-colors ${
+              selectedId === s.id ? "bg-coffee-50" : "hover:bg-coffee-50/60"
             }`}
           >
-            <span className="text-2xl w-11 h-11 flex items-center justify-center rounded-xl bg-brand/10">
-              {s.icon}
-            </span>
+            <span className="eyebrow text-coffee-300 w-8">{String(i + 1).padStart(2, "0")}</span>
             <span className="flex-1">
-              <span className="block font-semibold">{s.name}</span>
-              <span className="block text-sm text-gray-500">{s.durationMin} min</span>
+              <span className="block font-bold uppercase tracking-wide text-coffee-ink">{s.name}</span>
+              <span className="block text-xs uppercase tracking-widest text-coffee-400 mt-1">
+                {s.durationMin} min
+              </span>
             </span>
-            <span className="font-bold text-brand">{formatCLP(s.priceCLP)}</span>
+            <span className="font-bold text-coffee-700">{formatCLP(s.priceCLP)}</span>
+            <span className="text-coffee-300 group-hover:translate-x-1 transition-transform">→</span>
           </button>
         ))}
       </div>

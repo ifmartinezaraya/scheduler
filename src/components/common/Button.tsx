@@ -18,14 +18,14 @@ export function Button({
   return (
     <button
       className={twMerge(
-        "px-5 py-2.5 rounded-full font-semibold transition-all duration-200",
+        "px-7 py-3 rounded-full text-sm font-semibold uppercase tracking-[0.12em] transition-all duration-200",
         variant === "primary" &&
-          "bg-brand text-white hover:bg-brand-dark shadow-lg shadow-brand/25 disabled:opacity-50",
+          "bg-coffee-900 text-coffee-50 hover:bg-coffee-ink disabled:opacity-40",
         variant === "danger" &&
-          "bg-red-500 text-white hover:bg-red-600 disabled:opacity-50",
+          "bg-red-700 text-white hover:bg-red-800 disabled:opacity-40",
         variant === "outline" &&
-          "border-2 border-brand text-brand hover:bg-brand/10 disabled:opacity-50",
-        variant === "ghost" && "text-brand hover:bg-brand/10",
+          "border border-coffee-900 text-coffee-900 hover:bg-coffee-900 hover:text-coffee-50 disabled:opacity-40",
+        variant === "ghost" && "text-coffee-600 hover:text-coffee-900",
         disabled && "cursor-not-allowed",
         className
       )}
@@ -34,7 +34,7 @@ export function Button({
     >
       {isLoading ? (
         <span className="flex items-center justify-center">
-          <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+          <span className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin" />
         </span>
       ) : (
         children
